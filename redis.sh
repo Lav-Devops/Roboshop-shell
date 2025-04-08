@@ -3,15 +3,20 @@
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 
 echo "script started executing at $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE() {
     if [ $1 -ne 0 ]
     then 
-     echo "$2 ... Failed"
+     echo "$2 ... $R Failed $N"
     else
-     echo " $2.... Success"
+     echo " $2.... $G Success $N"
     fi
 }
 
@@ -32,7 +37,7 @@ VALIDATE $? "redis 6.2 module enable"
 dnf install redis -y
 VALIDATE $? "redis installation"
 
-sed -i '/s/127.0.0.1/0.0.0.0/g' /etc/redis.conf 
+sed -i '/s/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf 
 VALIDATE $? "remote access"
 
 systemctl enable redis
