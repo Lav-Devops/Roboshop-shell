@@ -39,6 +39,7 @@ then
   VALIDATE $? "User adding"
 else
  "user already exists..skipping"
+fi
 
 mkdir -p /app &>> $LOGFILE
 VALIDATE $? "directory creation"
