@@ -57,16 +57,16 @@ cd /app &>> $LOGFILE
 npm install &>> $LOGFILE
 VALIDATE $? " dependencies installation"
 
-cp /home/centos/user.service /etc/systemd/system/user.service
+cp /home/centos//Roboshop-shell/user.service /etc/systemd/system/user.service
 VALIDATE $? "copying user service"
 
 systemctl daemon-reload
 VALIDATE $? "Deamon reload"
 
-systemctl enable catalogue
+systemctl enable user
 VALIDATE $? "enable user"
 
-systemctl start catalogue
+systemctl start user
 VALIDATE $? "start user"
 
 cp /home/centos/Roboshop-shell/Mongo.repo /etc/yum.repos.d/mongo.repo
