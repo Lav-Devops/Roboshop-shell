@@ -70,3 +70,4 @@ dnf install mongodb-org-shell -y
 VALIDATE $? "install mongodb client" 
 
 mongo --host 52.70.35.170 </app/schema/catalogue.js
+VALIDATE $? "Loading catalogue data into Mongodb"
