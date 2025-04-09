@@ -40,7 +40,8 @@ VALIDATE $? "redis 6.2 module enable"
 dnf install redis -y
 VALIDATE $? "redis installation"
 
-vi /etc/redis/redis.conf 
+#vi /etc/redis/redis.conf 
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf
 VALIDATE $? "remote access"
 
 systemctl enable redis
