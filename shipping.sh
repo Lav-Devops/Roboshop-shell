@@ -35,7 +35,7 @@ VALIDATE $? "maven installation"
 useradd roboshop
 VALIDATE $? "roboshop user addition"
 
-mkdir /app
+mkdir -p /app
 VALIDATE $? "making directory"
 
 curl -L -o /tmp/shipping.zip https://roboshop-builds.s3.amazonaws.com/shipping.zip
