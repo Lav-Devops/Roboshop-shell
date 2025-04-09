@@ -31,6 +31,9 @@ fi
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.6.rpm -y
 VALIDATE $? "repo installation"
 
+dnf module reset redis
+VALIDATE $? "reset redis"
+
 dnf module enable redis:remi-6.2
 VALIDATE $? "redis 6.2 module enable"
 
