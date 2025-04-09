@@ -3,15 +3,21 @@
 ID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+
 
 echo "script started executing at $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE() {
     if [ $1 -ne 0 ]
     then 
-     echo "$2 ... Failed"
+     echo -e "$2 ...$R Failed $N"
     else
-     echo " $2.... Success"
+     echo " $2.... $G Success $N"
     fi
 }
 
