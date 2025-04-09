@@ -61,7 +61,7 @@ cd /app &>> $LOGFILE
 npm install &>> $LOGFILE
 VALIDATE $? " dependencies installation"
 
-cp /home/centos/Roboshop-Shell/cart.service /etc/systemd/system/cart.service
+cp /home/centos/Roboshop-shell/cart.service /etc/systemd/system/cart.service
 VALIDATE $? "copying cart service"
 
 systemctl daemon-reload
