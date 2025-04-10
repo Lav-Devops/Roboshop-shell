@@ -32,7 +32,7 @@ fi
 dnf module disable mysql -y
 VALIDATE $? "mysql default module disable"
 
-cp home/centos/Roboshop-shell/mysql.repo /etc/yum.repos.d/mysql.repo
+cp /home/centos/Roboshop-shell/mysql.repo /etc/yum.repos.d/mysql.repo
 VALIDATE $?  "coping mysql repo"
 
 dnf install mysql-community-server -y
