@@ -20,11 +20,14 @@
 -- Table structure for table `cities`
 --
 
-create database if not exists cities;
-use cities;
+CREATE DATABASE IF NOT EXISTS cities;
+USE cities;
 
-GRANT ALL ON cities.* TO 'shipping'@'%' IDENTIFIED BY 'secret';
-GRANT ALL ON cities.* TO 'shipping'@'localhost' IDENTIFIED BY 'secret';
+CREATE USER IF NOT EXISTS 'shipping'@'%' IDENTIFIED BY 'RoboShop@1';
+CREATE USER IF NOT EXISTS 'shipping'@'localhost' IDENTIFIED BY 'RoboShop@1';
+
+GRANT ALL ON cities.* TO 'shipping'@'%';
+GRANT ALL ON cities.* TO 'shipping'@'localhost';
 
 DROP TABLE IF EXISTS `cities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
