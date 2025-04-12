@@ -1,3 +1,5 @@
+DROP TABLE shipping;
+
 CREATE TABLE shipping (
   id INT PRIMARY KEY AUTO_INCREMENT,
   order_id INT NOT NULL,
