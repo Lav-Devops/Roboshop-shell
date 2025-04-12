@@ -52,11 +52,6 @@ cd /app
 unzip -o /tmp/shipping.zip
 VALIDATE $? "unzipping"
 
-cd /app
-
-mkdir /schema
-VALIDATE $? "making schema directory"
-
 mvn clean package
 VALIDATE $? "dependencies"
 
@@ -78,10 +73,10 @@ VALIDATE $? "shipping start"
 dnf install mysql -y
 VALIDATE $? "mysql client installation"
 
-cp /home/centos/Roboshop-shell/shipping.sql /app/schema/shipping.sql
+cp /home/centos/Roboshop-shell/shipping.sql /app/shipping.sql
 VALIDATE $? "copying shippping sql "
 
-mysql -h 3.235.137.123 -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
+mysql -h 3.235.137.123 -uroot -pRoboShop@1 < /app/shipping.sql &>> $LOGFILE
 VALIDATE $? "loading shipping sql to mysql"
 
 systemctl restart shipping
