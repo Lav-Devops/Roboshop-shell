@@ -52,6 +52,9 @@ cd /app
 unzip -o /tmp/shipping.zip
 VALIDATE $? "unzipping"
 
+mkdir -p /schema
+VALIDATE $? "making schema directory"
+
 mvn clean package
 VALIDATE $? "dependencies"
 
