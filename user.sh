@@ -80,5 +80,5 @@ VALIDATE $? "mongo repor copy"
 dnf install mongodb-org-shell -y
 VALIDATE $? "install mongodb client" 
 
-mongo --host 54.242.20.181 </app/schema/user.js
+mongo --host 44.192.61.184 </app/schema/user.js
 VALIDATE $? "Loading catalogue data into Mongodb"
