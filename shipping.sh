@@ -76,7 +76,7 @@ VALIDATE $? "mysql client installation"
 cp /home/centos/Roboshop-shell/shipping.sql /app/schema/shipping.sql
 VALIDATE $? "copying shippping sql "
 
-mysql -h 18.204.214.237 -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
+mysql -h 3.235.137.123 -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
 VALIDATE $? "loading shipping sql to mysql"
 
 systemctl restart shipping
