@@ -52,6 +52,8 @@ cd /app
 unzip -o /tmp/shipping.zip
 VALIDATE $? "unzipping"
 
+cd /app
+
 mkdir -p /schema
 VALIDATE $? "making schema directory"
 
