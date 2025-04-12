@@ -81,4 +81,4 @@ dnf install mongodb-org-shell -y
 VALIDATE $? "install mongodb client" 
 
 mongo --host 44.192.61.184 </app/schema/user.js
-VALIDATE $? "Loading catalogue data into Mongodb"
+VALIDATE $? "Loading user data into Mongodb"
