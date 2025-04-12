@@ -67,7 +67,7 @@ VALIDATE $? "shipping start"
 dnf install mysql -y
 VALIDATE $? "mysql client installation"
 
-mysql -h 35.172.214.187 -uroot -pRoboShop@1 shipping < /home/centos/Roboshop-shell/shipping.sql &>> $LOGFILE
+mysql -h 18.204.214.237 -uroot -pRoboShop@1 shipping < /home/centos/Roboshop-shell/shipping.sql &>> $LOGFILE
 VALIDATE $? "loading shipping sql to mysql"
 
 systemctl restart shipping
