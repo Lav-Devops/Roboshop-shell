@@ -54,7 +54,7 @@ VALIDATE $? "unzipping"
 
 cd /app
 
-mkdir -p /schema
+mkdir /schema
 VALIDATE $? "making schema directory"
 
 mvn clean package
